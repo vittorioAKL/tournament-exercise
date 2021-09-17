@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Tournament;
 
 /**
- * Class Swordsman.
+ * Class Viking.
  */
-class Swordsman extends Action
+class Viking extends Action
 {
+
     public $type;
     public $enemy;
     public $params;
@@ -16,7 +17,8 @@ class Swordsman extends Action
 
     public function __construct($type = false)
     {
-        $this->params = array('hitPoints' => 100, 'damage' => 5, 'weapon' => 'sword');
+        $this->params = array('hitPoints' => 120, 'damage' => 6, 'weapon' => 'axe');
+
         $this->type = $type;
     }
 
@@ -40,16 +42,6 @@ class Swordsman extends Action
                     'condition' => 3
                 ];
                 break;
-            case 'armor':
-                $this->equip[$item] = [
-                    'name' => 'armor'
-                ];
-                break;
-            case 'axe':
-                $this->params['weapon'] = 'axe';
-                $this->params['damage'] = 6;
-                break;
-
         }
     }
 }
